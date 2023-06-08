@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 
-const token = "test"; // TODO use dotenv here
+const token = process.env["DISCORD_TOKEN"];
 
 console.log("Bot is starting...");
 
