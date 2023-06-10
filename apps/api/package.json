@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsup src/index.ts --watch --onSuccess  'node dist/index.js'",
     "build": "tsup src/index.ts",
+    "lint": "eslint **/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

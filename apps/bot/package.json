@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/Bot.ts",
-    "dev": "ts-node src/Bot.ts",
+    "dev": "tsup src/Bot.ts --watch --onSuccess 'node dist/Bot.js'",
+    "build": "tsup src/Bot.ts",
     "lint": "eslint **/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
-    "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   }
 }
