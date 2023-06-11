@@ -7,12 +7,11 @@ const interactionCreate = (client: Client): void => {
       return;
     }
 
-    await handleSlashCommand(client, interaction);
+    await handleSlashCommand(interaction);
   });
 };
 
 const handleSlashCommand = async (
-  client: Client,
   interaction: ChatInputCommandInteraction
 ): Promise<void> => {
   // find matching command if it exists
@@ -24,7 +23,7 @@ const handleSlashCommand = async (
 
   await interaction.deferReply();
 
-  slashCommand.run(client, interaction);
+  slashCommand.run(interaction.client, interaction);
 };
 
 export default interactionCreate;
