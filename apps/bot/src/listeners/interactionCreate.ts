@@ -23,7 +23,7 @@ const handleSlashCommand = async (
 
   await interaction.deferReply();
 
-  slashCommand.run(interaction.client, interaction);
+  slashCommand.run(interaction);
 };
 
 export default interactionCreate;
