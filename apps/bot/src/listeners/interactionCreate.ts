@@ -8,7 +8,6 @@ import { Commands } from "src/Commands";
 
 const interactionCreate = (client: Client): void => {
   client.on("interactionCreate", async (interaction: Interaction) => {
-    // if (interaction.isCommand() || interaction.isContextMenuCommand()) {
     if (!interaction.isChatInputCommand()) {
       return;
     }
