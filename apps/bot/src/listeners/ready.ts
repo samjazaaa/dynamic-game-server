@@ -7,9 +7,6 @@ const ready = (client: Client): void => {
       return;
     }
 
-    // register all defined slash commands
-    await client.application.commands.set([...Commands.values()]);
-
     console.log(`${client.user.tag} is online!`);
   });
 };

@@ -11,6 +11,10 @@
       "cache": false,
       "persistent": true,
       "env": ["DISCORD_TOKEN"]
+    },
+    "register": {
+      "cache": false,
+      "env": ["DISCORD_TOKEN", "DISCORD_CLIENT_ID"]
     }
   }
 }
