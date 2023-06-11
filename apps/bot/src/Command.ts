@@ -5,5 +5,5 @@ import {
 
 // add run function to existing command data interface
 export interface Command extends ChatInputApplicationCommandData {
-  run: (interaction: ChatInputCommandInteraction) => void;
+  run: (interaction: ChatInputCommandInteraction) => Promise<void>;
 }
