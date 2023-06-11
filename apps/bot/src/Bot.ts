@@ -1,4 +1,6 @@
 import { Client } from "discord.js";
+import ready from "./listeners/ready";
+import interactionCreate from "./listeners/interactionCreate";
 
 const token = process.env["DISCORD_TOKEN"];
 
@@ -7,6 +9,8 @@ console.log("Bot is starting...");
 const client = new Client({
   intents: [],
 });
-client.login(token);
 
-console.log(client);
+ready(client);
+interactionCreate(client);
+
+client.login(token);
