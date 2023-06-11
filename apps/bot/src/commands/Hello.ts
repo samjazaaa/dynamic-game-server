@@ -1,11 +1,11 @@
 import {
   ApplicationCommandType,
-  BaseInteraction,
   ChatInputCommandInteraction,
   Client,
 } from "discord.js";
 import { Command } from "src/Command";
 
+// TODO use builder pattern instead?
 export const Hello: Command = {
   name: "hello",
   description: "Returns a greeting",

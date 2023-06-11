@@ -21,7 +21,8 @@ const handleSlashCommand = async (
   client: Client,
   interaction: ChatInputCommandInteraction
 ): Promise<void> => {
-  const slashCommand = Commands.find((c) => c.name === interaction.commandName);
+  // find matching command if it exists
+  const slashCommand = Commands.get(interaction.commandName);
   if (!slashCommand) {
     interaction.followUp({ content: "An error has occurred" });
     return;
