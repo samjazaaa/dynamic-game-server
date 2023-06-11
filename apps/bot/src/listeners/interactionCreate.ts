@@ -1,9 +1,4 @@
-import {
-  BaseInteraction,
-  ChatInputCommandInteraction,
-  Client,
-  Interaction,
-} from "discord.js";
+import { ChatInputCommandInteraction, Client, Interaction } from "discord.js";
 import { Commands } from "src/Commands";
 
 const interactionCreate = (client: Client): void => {
