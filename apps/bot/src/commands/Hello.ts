@@ -12,7 +12,7 @@ export const Hello: Command = {
   run: async (interaction: ChatInputCommandInteraction) => {
     const content = "Hello there!";
 
-    await interaction.followUp({
+    await interaction.reply({
       ephemeral: true,
       content,
     });

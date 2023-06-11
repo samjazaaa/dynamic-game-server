@@ -21,8 +21,6 @@ const handleSlashCommand = async (
     return;
   }
 
-  await interaction.deferReply();
-
   try {
     await slashCommand.run(interaction);
   } catch (error) {
