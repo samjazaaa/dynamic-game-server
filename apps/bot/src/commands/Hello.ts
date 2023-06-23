@@ -1,14 +1,14 @@
 import {
   ApplicationCommandType,
   ChatInputCommandInteraction,
+  SlashCommandBuilder,
 } from "discord.js";
-import { Command } from "src/Command";
+import { ExecutableCommand } from "src/Command";
 
-// TODO use builder pattern instead?
-export const Hello: Command = {
-  name: "hello",
-  description: "Returns a greeting",
-  type: ApplicationCommandType.ChatInput,
+export const Hello: ExecutableCommand = {
+  command: new SlashCommandBuilder()
+    .setName("hello")
+    .setDescription("Returns a greeting"),
   run: async (interaction: ChatInputCommandInteraction) => {
     const content = "Hello there!";
 

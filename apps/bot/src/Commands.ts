@@ -1,11 +1,11 @@
 import { Collection } from "discord.js";
-import { Command } from "./Command";
+import { ExecutableCommand } from "./Command";
 import { Hello } from "./commands/Hello";
 
-const commandList: Command[] = [Hello];
+const commandList: ExecutableCommand[] = [Hello];
 
 export const Commands = new Collection(
   commandList.map((command) => {
-    return [command.name, command];
+    return [command.command.name, command];
   })
 );
