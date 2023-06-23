@@ -23,7 +23,9 @@ const rest = new REST().setToken(token);
     );
 
     const data = await rest.put(Routes.applicationCommands(clientId), {
-      body: [...commands.values()],
+      body: [...commands.values()].map((executableCommand) => {
+        return executableCommand.command;
+      }),
     });
 
     if (Array.isArray(data)) {
