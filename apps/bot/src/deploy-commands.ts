@@ -22,9 +22,15 @@ const rest = new REST().setToken(token);
       `Started refreshing ${commands.size} application (/) commands.`
     );
 
+    const bodyData = [...commands.values()].map((executableCommand) => {
+      return executableCommand.command.toJSON();
+    });
+
+    console.log(bodyData);
+
     const data = await rest.put(Routes.applicationCommands(clientId), {
       body: [...commands.values()].map((executableCommand) => {
-        return executableCommand.command;
+        return executableCommand.command.toJSON();
       }),
     });
 
@@ -32,6 +38,7 @@ const rest = new REST().setToken(token);
       console.log(
         `Successfully reloaded ${data.length} application (/) commands.`
       );
+      console.log(data);
     }
   } catch (error) {
     console.error(error);

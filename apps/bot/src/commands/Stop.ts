@@ -1,12 +1,12 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 import { ExecutableCommand } from "src/Command";
 
-export const Hello: ExecutableCommand = {
+export const Stop: ExecutableCommand = {
   command: new SlashCommandBuilder()
-    .setName("hello")
-    .setDescription("Returns a greeting"),
+    .setName("stop")
+    .setDescription("Stops the currently running game server"),
   run: async (interaction: ChatInputCommandInteraction) => {
-    const content = "Hello there!";
+    const content = "Placeholder for stop message...";
 
     await interaction.reply({
       ephemeral: true,

@@ -1,12 +1,12 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 import { ExecutableCommand } from "src/Command";
 
-export const Hello: ExecutableCommand = {
+export const Status: ExecutableCommand = {
   command: new SlashCommandBuilder()
-    .setName("hello")
-    .setDescription("Returns a greeting"),
+    .setName("status")
+    .setDescription("Returns the current status of the dynamic game server"),
   run: async (interaction: ChatInputCommandInteraction) => {
-    const content = "Hello there!";
+    const content = "Placeholder for game server status...";
 
     await interaction.reply({
       ephemeral: true,
