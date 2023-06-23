@@ -6,7 +6,20 @@ export const Available: ExecutableCommand = {
     .setName("available")
     .setDescription("Returns the available game server types"),
   run: async (interaction: ChatInputCommandInteraction) => {
-    const content = "Placeholder for the available game servers...";
+    // TODO notify client that request is processed to prevent timeout?
+
+    // TODO request actual list of available game servers from api
+    const availableServers = [
+      "Placeholder Craft",
+      "Trouble in Placeholder Town",
+      "World of Placeholder",
+    ];
+
+    let content = "Currently available game servers:\n";
+
+    availableServers.forEach((server) => {
+      content = content.concat("\n- " + server);
+    });
 
     await interaction.reply({
       ephemeral: true,
