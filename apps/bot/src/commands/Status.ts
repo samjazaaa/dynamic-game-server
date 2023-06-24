@@ -6,7 +6,17 @@ export const Status: ExecutableCommand = {
     .setName("status")
     .setDescription("Returns the current status of the dynamic game server"),
   run: async (interaction: ChatInputCommandInteraction) => {
-    const content = "Placeholder for game server status...";
+    // TODO notify client that request is processed to prevent timeout?
+
+    // TODO request actual status of game servers from api
+    const status = { game: "Placeholder Craft", online: 42 };
+
+    let content = status.game
+      ? "Currently running:\n\nGame: " +
+        status.game +
+        "\nOnline: " +
+        status.online
+      : "No active game server";
 
     await interaction.reply({
       ephemeral: true,
