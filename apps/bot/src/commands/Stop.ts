@@ -11,7 +11,7 @@ export const Stop: ExecutableCommand = {
     // TODO post actual stop message
     const response = { success: true, game: "Placeholder Craft" };
 
-    let content = response.success
+    const content = response.success
       ? "Successfully stopped server: " + response.game
       : "Could not stop game server" + response.game
       ? ": " + response.game
