@@ -1,5 +1,7 @@
 import express from "express";
 import fs from "fs";
+import { registerAuth } from "./startup/auth";
+import { registerRoutes } from "./startup/routes";
 
 const app = express();
 
@@ -25,33 +27,11 @@ if (!serverDataPath || !fs.existsSync(serverDataPath)) {
 // TODO scan all available game server templates
 
 // require api key for any request
-app.use((req, res, next) => {
-  const sentApiKey = req.get("API-Key");
-  if (!sentApiKey || sentApiKey !== apiKey) {
-    res.status(401).json({ error: "unauthorised" });
-  } else {
-    next();
-  }
-});
+registerAuth(app, apiKey);
+registerRoutes(app);
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello World!" });
-});
-
-app.get("/status", (req, res) => {
-  res.status(200).json({ message: "status placeholder" });
-});
-
-app.get("/available", (req, res) => {
-  res.status(200).json({ message: "available placeholder" });
-});
-
-app.get("/start", (req, res) => {
-  res.status(200).json({ message: "start placeholder" });
-});
-
-app.get("/stop", (req, res) => {
-  res.status(200).json({ message: "stop placeholder" });
 });
 
 app.listen(3001, () => {
