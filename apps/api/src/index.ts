@@ -30,10 +30,6 @@ if (!serverDataPath || !fs.existsSync(serverDataPath)) {
 registerAuth(app, apiKey);
 registerRoutes(app);
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Hello World!" });
-});
-
 app.listen(3001, () => {
   console.log("Server listening on port 3001");
 });
