@@ -1,9 +1,14 @@
 import express from "express";
 
 const app = express();
+
+// api key for communication with bot
 const apiKey = process.env["API_KEY"];
 
-console.log(apiKey);
+// save all actual server data for the available game servers under this path
+const serverDataPath = process.env["SERVER_DATA"];
+
+// TODO check if all required env variables are provided and accessible
 
 // require api key for any request
 app.use((req, res, next) => {

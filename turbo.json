@@ -10,7 +10,7 @@
     "dev": {
       "cache": false,
       "persistent": true,
-      "env": ["DISCORD_TOKEN", "API_KEY"]
+      "env": ["DISCORD_TOKEN", "API_KEY", "SERVER_DATA"]
     },
     "register": {
       "cache": false,
