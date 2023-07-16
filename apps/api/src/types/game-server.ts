@@ -1,3 +1,6 @@
 export type GameServer = {
-  name: string;
+  displayName: string;
+  pathName: string;
+  version: string;
+  description?: string;
 };
