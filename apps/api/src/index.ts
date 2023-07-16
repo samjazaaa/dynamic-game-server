@@ -2,6 +2,7 @@ import express from "express";
 import fs from "fs";
 import { registerAuth } from "./startup/auth";
 import { registerRoutes } from "./startup/routes";
+import { scanAvailableServers } from "./startup/available-servers";
 
 const app = express();
 
@@ -23,8 +24,8 @@ if (!serverDataPath || !fs.existsSync(serverDataPath)) {
   process.exit(1);
 }
 
-// TODO define type / interface for available game server => parse from yaml in folder?
-// TODO scan all available game server templates
+// scan all available game server templates
+scanAvailableServers();
 
 // require api key for any request
 registerAuth(app, apiKey);
